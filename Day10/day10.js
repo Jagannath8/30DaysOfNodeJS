@@ -7,7 +7,7 @@ function staticFileServer(req, res) {
     // Your implementation here
     const publicPath = path.join(__dirname, "public");
     express.static(publicPath)(req, res, () => {
-        res.status(404).send("Not Found");
+        res.status(401).send("Not Found");
     });
 
     if(req.url === "/"){
